@@ -1,0 +1,39 @@
+name: Claude (profesor de árabe)
+
+# Modo asíncrono (Protocolo B de CLAUDE.md): se dispara al comentar @claude en un issue.
+on:
+  issue_comment:
+    types: [created]
+
+concurrency:
+  group: claude-issue-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  claude:
+    # Solo comentarios en issues (no en PRs) que mencionen @claude.
+    if: |
+      github.event.issue.pull_request == null &&
+      contains(github.event.comment.body, '@claude')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # commit y push de la lección a main
+      issues: write     # comentar y cerrar issues
+      pull-requests: write
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Run Claude Code
+        uses: anthropics/claude-code-action@v1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          claude_args: |
+            --max-turns 40
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(git:*),Bash(gh issue:*),Bash(gh api:*),Bash(date:*),Bash(ls:*)"
+            --append-system-prompt "Eres el profesor de árabe descrito en CLAUDE.md. Sigue el Protocolo B (sesión por comentarios) de CLAUDE.md al pie de la letra. Para cerrar una lección: haz commit y push a main con 'git push origin HEAD:main' y cierra el issue con 'gh issue close'. No abras pull requests."
