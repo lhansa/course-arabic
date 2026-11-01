@@ -24,7 +24,7 @@ Raíz ك-ت-ب:
 
 ## Explicación
 
-La raíz aporta el campo de significado y el patrón dice qué tipo de palabra es: فاعل es el que hace la acción, مفعول lo que la recibe, مفعل el lugar, etc. Con la misma raíz y distintos patrones salen familias de palabras previsibles.
+La raíz aporta el campo de significado y el patrón dice qué tipo de palabra es: فاعل es el que hace la acción, مفعول lo que la recibe, مَفْعَل / مَفْعَلَة el lugar (مَكْتَب، مَكْتَبَة، مَدْرَسَة), etc. Con la misma raíz y distintos patrones salen familias de palabras previsibles.
 
 Duda de Leonardo durante la sesión: طالب y دارس tienen el mismo patrón (فاعل) y raíces distintas, ط-ل-ب («pedir, buscar») y د-ر-س («estudiar»). En el uso normal «estudiante» es طالب; دارس es más descriptivo y formal. Curiosidad: «talibán» es طالب con el plural persa/pastún ‑ān.
 
@@ -44,7 +44,8 @@ Duda de Leonardo durante la sesión: طالب y دارس tienen el mismo patrón
 - **Respuesta de Leonardo**: estudiante
 - **Corrección**: ✅
 
-### 2. د-ر-س + مَفْعَل → مَدْرَسَة = ?
+### 2. د-ر-س + مَفْعَلَة → مَدْرَسَة = ?
+- **Nota**: en la sesión original el enunciado decía مَفْعَل; el patrón exacto de مَدْرَسَة es مَفْعَلَة (con ة).
 - **Respuesta de Leonardo**: escuela
 - **Corrección**: ✅
 
